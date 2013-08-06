@@ -8,9 +8,11 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
+gem 'designmodo-flatuipro-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
 
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
