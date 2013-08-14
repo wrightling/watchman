@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'sqlite3'
+gem 'activerecord-jdbcsqlite3-adapter'
 
 gem 'less-rails'
+gem 'therubyrhino'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'twitter-bootstrap-rails'
-gem 'therubyracer'
 gem 'designmodo-flatuipro-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
