@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'jdbc-jtds'
+gem 'sequel'
 
 gem 'less-rails'
 gem 'therubyrhino'
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'capybara'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
