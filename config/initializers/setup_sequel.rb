@@ -3,4 +3,4 @@ username = config['username']
 password = config['password']
 url = config['url']
 
-DB = Sequel.connect("#{url}?user=#{username}&password=#{password}")
+DB = Sequel.connect("#{url};user=#{username};password=#{password}")
