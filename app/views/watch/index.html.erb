@@ -1,1 +1,17 @@
-<h2>Is this your homework, Larry?</h2>
+<h3>Is this your homework, Larry?</h3>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th>Date</th>
+      <th>Event ID</th>
+      <th>Message</th>
+    </tr>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.log_date %></td>
+        <td><%= event.event_id %></td>
+        <td><%= event.formatted_message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
