@@ -3,7 +3,7 @@ class Event < Sequel::Model(:logging_event)
 
   def self.top(num_events)
     Event.order_by(:event_id)
-      .select(:event_id, :log_date, :formatted_message)
+      .select(:event_id, :log_date, :formatted_message, :level_string)
       .last(num_events)
   end
 end
