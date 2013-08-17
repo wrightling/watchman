@@ -7,14 +7,14 @@ html, body, .container, .content {
 }
 
 .proper-content {
-    padding-top: 53px; /* >= navbar height */
+    padding-top: @navbar-height; /* >= navbar height */
 }
 
 .wrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -101px; /* same as the footer */
+    margin: 0 auto -@footer-height; /* same as the footer */
 }
 
 .push {
@@ -22,5 +22,5 @@ html, body, .container, .content {
 }
 .footer-wrapper {
     position: relative;
-    height: 101px;
+    height: @footer-height;
 }
