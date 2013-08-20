@@ -3,7 +3,7 @@
     setTimeout @request, 5000
 
   request: ->
-    $.get($('#events').data('url'))
+    $.get($('#events').data('url'), after:$('.event').first().data('id'))
 
 ready = ->
   if $('#events').length > 0
