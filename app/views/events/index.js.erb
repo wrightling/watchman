@@ -1,2 +1,2 @@
-$('#events').html('<%=j render(@events) %>');
+$('#events').prepend('<%= j render(@events) %>');
 EventPoller.poll();
