@@ -4,6 +4,7 @@ Watchman::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'watch#index'
+  get  'events', to: 'events#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -39,7 +40,7 @@ Watchman::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
