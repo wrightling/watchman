@@ -6,7 +6,8 @@
     $.get($('#events').data('url'))
 
 ready = ->
-  EventPoller.poll()
+  if $('#events').length > 0
+    EventPoller.poll()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
