@@ -14,4 +14,11 @@ feature "GET /" do
     visit root_path
     expect(page).to have_content Event.first.formatted_message
   end
+
+  scenario "event list updates after 5s by way of AJAX request", js: true do
+    visit root_path
+    expect(page).to have_title "Watchman"
+    event = create(:event)
+    expect(page).to have_content event.formatted_message
+  end
 end

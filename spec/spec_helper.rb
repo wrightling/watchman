@@ -9,6 +9,8 @@ require 'capybara/rspec'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+Capybara.default_wait_time = 7
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -19,13 +21,26 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   # Sequel settings
-  config.around(:each) do |example|
-    DB.transaction(rollback: :always) { example.run }
-  end
+  # config.around(:each) do |example|
+  #   DB.transaction(rollback: :always) { example.run }
+  # end
 
   config.include FactoryGirl::Syntax::Methods
   FactoryGirl.define do
     to_create { |instance| instance.save }
+  end
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.clean
   end
 
   # If true, the base class of anonymous controllers will be inferred
