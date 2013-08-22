@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
 gem 'jdbc-jtds'
+gem 'jdbc-sqlite3'
 gem 'sequel'
 
 gem 'less-rails'
