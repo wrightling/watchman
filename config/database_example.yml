@@ -3,13 +3,8 @@ development:
   password: <pwd>
   url: jdbc:jtds:sqlserver://nwltest06n3:1433;integratedsecurity=true;domain=nwl;databaseName=logging
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  username: <name>
-  password: <pwd>
-  url: jdbc:jtds:sqlserver://nwltest06n3:1433;integratedsecurity=true;domain=nwl;databaseName=logging
+  url: jdbc:sqlite:db/test.sqlite3
 
 production:
   username: <name>
