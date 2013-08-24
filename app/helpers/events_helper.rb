@@ -4,6 +4,10 @@ module EventsHelper
   end
 
   def to_time(time)
-    Time.new(time) unless time.class == Time
+    if time.class == Time
+      time
+    else
+      Time.new(time)
+    end
   end
 end
