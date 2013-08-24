@@ -16,6 +16,7 @@
 //= require jquery.ui.spinner
 //= require jquery.ui.tooltip
 //= require jquery.ui.effect
+//= require jquery.ui.effect-highlight
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require flatuipro
