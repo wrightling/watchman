@@ -11,16 +11,25 @@
   <%= render 'layouts/header' %>
 
   <div class="wrapper">
-    <div class="container">
-      <div class="proper-content">
+    <div class=row-fluid>
+      <div class="container-fluid">
+        <div class="span9">
+          <div class="proper-content">
 
-        <%= yield %>
+            <%= yield %>
 
-      </div>
-    </div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="proper-content">
+            <%= render 'layouts/sidebar' %>
+          </div>
+        </div>
+      </div> <%# container-fluid %>
+  </div> <%# row-fluid %>
 
     <div class="push"></div>
-  </div>
+  </div> <%# wrapper %>
   <div class="footer-wrapper">
     <%= render 'layouts/footer' %>
   </div>
