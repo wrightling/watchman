@@ -11,3 +11,10 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
+
+highlight = ->
+  $(this).addClass('is-highlighted').siblings().removeClass('is-highlighted')
+  $('aside').removeClass('hidden')
+
+$ ->
+  $('.event').click(highlight)

@@ -21,4 +21,19 @@ feature "GET /" do
     event = create(:event)
     expect(page).to have_content event.formatted_message
   end
+
+  scenario "sidebar shows more event details on click", js: true, focus: true do
+    visit root_path
+    expect(page).to have_no_selector('aside')
+    event = Event.all[1]
+    find(".event[id='#{event.event_id}']").click
+    expect(page).to have_css(".is-highlighted[id='#{event.event_id}']")
+    expect(page).not_to have_css('aside.hidden')
+    within('aside') do
+      expect(page).to have_content(event.event_id)
+      # todo - add other expected content
+    end
+  end
+
+  scenario "selecting events properly highlights and un-highlights rows"
 end
