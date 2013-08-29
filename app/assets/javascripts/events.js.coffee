@@ -13,7 +13,7 @@ $(document).ready(ready)
 $(document).on('page:load', ready)
 
 highlight = ->
-  $(this).addClass('is-highlighted').siblings().removeClass('is-highlighted')
+  $(this).addClass('selected-row').siblings().removeClass('selected-row')
   $('aside').removeClass('hidden')
 
 $ ->
