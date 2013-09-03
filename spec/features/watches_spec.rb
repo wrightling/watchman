@@ -31,7 +31,8 @@ feature "GET /" do
     expect(page).not_to have_css('aside.hidden')
     within('aside') do
       expect(page).to have_content(event.event_id)
-      # todo - add other expected content
+      expect(page).to have_content(event.thread_name)
+      expect(page).to have_content(event.caller_filename)
     end
   end
 
