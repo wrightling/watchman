@@ -17,4 +17,4 @@ highlight = ->
   $('aside').removeClass('hidden')
 
 $ ->
-  $('.event').click(highlight)
+  $('body').on("click", "tr", highlight)
