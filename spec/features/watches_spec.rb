@@ -27,7 +27,7 @@ feature "GET /" do
     expect(page).to have_no_selector('aside')
     event = Event.all[1]
     find(".event[id='#{event.event_id}']").click
-    expect(page).to have_css(".is-highlighted[id='#{event.event_id}']")
+    expect(page).to have_css(".selected-row[id='#{event.event_id}']")
     expect(page).not_to have_css('aside.hidden')
     within('aside') do
       expect(page).to have_content(event.event_id)
