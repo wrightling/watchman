@@ -1,6 +1,6 @@
 $('#events').prepend('<%= j render(@events) %>');
 <% @events.each do |event| %>
-  $('#<%= event.event_id %>').effect("highlight", {}, 1500);
+  $('#<%= j escape_dot event.event_id %>').effect("highlight", {}, 1500);
 <% end %>
 $('.event').filter(function(i) { return i >= <%= default_num_events %>; }).remove();
 EventPoller.poll();

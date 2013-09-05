@@ -10,4 +10,8 @@ module EventsHelper
       Time.new(time)
     end
   end
+
+  def escape_dot(event_id)
+    event_id.to_s.gsub /\./, '\\\\.'
+  end
 end

@@ -20,4 +20,19 @@ describe EventsController do
                                        "EventPoller.poll()")
     end
   end
+
+  describe "ajax request for particular event" do
+    before :each do
+      @event = create(:event)
+      xhr :get, :show, event_id: @event.event_id
+    end
+
+    it "has a 200 status" do
+      expect(response.response_code).to eql 200
+    end
+
+    it "returns expected json" do
+      expect(response.body).to include(@event.logger_name)
+    end
+  end
 end
