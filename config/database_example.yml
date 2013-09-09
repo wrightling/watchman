@@ -1,7 +1,8 @@
 development:
-  username: <name>
-  password: <pwd>
-  url: jdbc:jtds:sqlserver://nwltest06n3:1433;integratedsecurity=true;domain=nwl;databaseName=logging
+  # username: <name>
+  # password: <pwd>
+  # url: jdbc:jtds:sqlserver://nwltest06n3:1433;integratedsecurity=true;domain=nwl;databaseName=logging
+  url: jdbc:sqlite:db/development.sqlite3
 
 test:
   url: jdbc:sqlite:db/test.sqlite3
