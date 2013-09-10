@@ -22,7 +22,7 @@ feature "GET /" do
     expect(page).to have_content event.formatted_message
   end
 
-  scenario "sidebar shows more event details on click", js: true, focus: true do
+  scenario "sidebar shows more event details on click", js: true do
     visit root_path
     expect(page).to have_no_selector('aside')
     event = Event.all[1]
@@ -36,5 +36,12 @@ feature "GET /" do
     end
   end
 
-  scenario "selecting events properly highlights and un-highlights rows"
+  scenario "number of events shown can be modified on the fly", focus: true do
+    15.times { create(:event) }
+    visit root_path
+    # expect(page).to have_field('num_events').with_value(10)
+    # find('#numEvents').value 20
+    # expect(page).to have_field('num_events').with_value(20)
+    # expect(page).to have_num_events(20)
+  end
 end
