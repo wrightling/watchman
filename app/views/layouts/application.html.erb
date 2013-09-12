@@ -11,25 +11,39 @@
   <%= render 'layouts/header' %>
 
   <div class="wrapper">
-    <div class=row-fluid>
-      <div class="container-fluid">
-        <div class="span9">
-          <div class="proper-content">
+    <div class="proper-content">
 
-            <%= yield %>
-
+      <div class="row">
+        <div class="container-fluid">
+          <div class="span">
+              <div class="control-group">
+                <span class="ui-spinner ui-widget ui-widget-content ui-corner-all">
+                  <input type="text" pattern="[0-9]*" id="spinner-01" placeHolder="10" class="spinner ui-spinner-input" aria-valuemin="1" aria-valuemax="9999" aria-valuenow="10" autocomplete="off" role="spinbutton">
+                </span>
+              </div>
           </div>
         </div>
-        <div class="span3">
-          <div class="proper-content">
-            <%= render 'layouts/sidebar' %>
-          </div>
-        </div>
-      </div> <%# container-fluid %>
-  </div> <%# row-fluid %>
+      </div> <%# row %>
 
-    <div class="push"></div>
+      <div class=row-fluid>
+        <div class="container-fluid">
+          <div class="span9">
+
+              <%= yield %>
+
+          </div>
+          <div class="span3">
+            <div class="proper-content">
+              <%= render 'layouts/sidebar' %>
+            </div>
+          </div>
+        </div> <%# container-fluid %>
+      </div> <%# row-fluid %>
+
+      <div class="push"></div>
+    </div> <%# proper-content %>
   </div> <%# wrapper %>
+
   <div class="footer-wrapper">
     <%= render 'layouts/footer' %>
   </div>
