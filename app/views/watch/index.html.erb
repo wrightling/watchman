@@ -1,13 +1,22 @@
-<table class="table table-hover" title="Event List">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th class='nowrap'>Event ID</th>
-      <th>Message</th>
-      <th>Level</th>
-    </tr>
-  </thead>
-  <%= content_tag :tbody, id: "events", data: {url: events_url} do %>
-    <%= render @events %>
-  <% end %>
-</table>
+<div class="row">
+  <div class="container-fluid">
+    <div class="span">
+        <div class="control-group">
+          <%= render 'watch/filters' %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class=row-fluid>
+  <div class="container-fluid">
+    <div class="span9">
+      <%= render 'watch/event_table' %>
+    </div>
+    <div class="span3">
+      <div class="proper-content">
+        <%= render 'watch/sidebar' %>
+      </div>
+    </div>
+  </div> <%# container-fluid %>
+</div> <%# row-fluid %>
