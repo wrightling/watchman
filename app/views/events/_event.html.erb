@@ -1,6 +1,6 @@
 <%= content_tag :tr, class: 'event', id: event.event_id, data: {id: event.event_id} do %>
   <td class='nowrap'><%= to_time(event.log_date).to_formatted_s(:short) %></td>
   <td><%= event.event_id %></td>
-  <td><%= event.formatted_message %></td>
+  <td class='breakme'><%= event.formatted_message %></td>
   <td><%= event.level_string %></td>
 <% end %>
