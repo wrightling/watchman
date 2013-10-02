@@ -1,6 +1,6 @@
 module EventsHelper
-  def default_num_events
-    Watchman.config.default_num_events
+  def num_events
+    @_controller.num_events
   end
 
   def to_time(time)

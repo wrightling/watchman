@@ -33,3 +33,9 @@ sidebar = ->
 
 $ ->
   $('body').on("click", "tr", sidebar)
+
+filter = ->
+  window.alert('blurred')
+
+$ ->
+  $('input').blur(filter)

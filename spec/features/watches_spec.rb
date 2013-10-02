@@ -36,12 +36,13 @@ feature "GET /" do
     end
   end
 
-  scenario "number of events shown can be modified on the fly", focus: true do
+  scenario "number of events shown can be modified on the fly", js: true, focus: true do
     15.times { create(:event) }
     visit root_path
-    # expect(page).to have_field('num_events').with_value(10)
-    # find('#numEvents').value 20
-    # expect(page).to have_field('num_events').with_value(20)
-    # expect(page).to have_num_events(20)
+    expect(page).to have_field('num_events', with: "10")
+    fill_in 'num_events', with: "20"
+    expect(page).to have_field('num_events', with: "20")
+    expect(page).to have_css('.event', count: 20)
+    expect(page).to have_no_selector('aside')
   end
 end

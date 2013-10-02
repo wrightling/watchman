@@ -1,5 +1,5 @@
 class WatchController < ApplicationController
   def index
-    @events = Event.top(Watchman.config.default_num_events)
+    @events = Event.top(num_events)
   end
 end
