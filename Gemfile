@@ -13,6 +13,7 @@ gem 'twitter-bootstrap-rails'
 gem 'designmodo-flatuipro-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
+gem 'jquery-cookie-rails'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'

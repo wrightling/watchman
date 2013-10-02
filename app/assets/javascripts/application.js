@@ -18,6 +18,7 @@
 //= require jquery.ui.effect
 //= require jquery.ui.effect-highlight
 //= require jquery_ujs
+//= require jquery.cookie
 //= require twitter/bootstrap
 //= require flatuipro
 //= require turbolinks

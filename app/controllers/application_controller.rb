@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def num_events
-    cookies[:num_events] ||= Watchman.config.default_num_events
-    cookies[:num_events].to_i
+    cookies.permanent[:num_events] ||= Watchman.config.default_num_events
+    cookies.permanent[:num_events].to_i
   end
 end

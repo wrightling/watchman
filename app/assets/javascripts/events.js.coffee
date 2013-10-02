@@ -35,7 +35,9 @@ $ ->
   $('body').on("click", "tr", sidebar)
 
 filter = ->
-  window.alert('blurred')
+  $('.event').remove()
+  $.cookie('num_events', $('#spinner-01').val(), { expires: 365 })
+  $.get($('#events').data('url'), after:0)
 
 $ ->
   $('input').blur(filter)
