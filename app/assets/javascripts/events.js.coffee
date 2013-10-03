@@ -41,3 +41,6 @@ filter = ->
 
 $ ->
   $('input').blur(filter)
+
+$ ->
+  $('select').selectpicker({style: 'btn-info btn-inverse', menuStyle: 'dropdown-inverse'})
