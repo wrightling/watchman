@@ -36,5 +36,37 @@ describe Event do
         end
       end
     end
+
+    context "with a log level set" do
+      before :each do
+        2.times { create(:event, level_string: "ERROR") }
+        2.times { create(:event, level_string: "WARN") }
+      end
+
+      let(:num_events) { 6 }
+      let(:events) { Event.top(num_events, 0, log_level) }
+
+      context "with a log level set to :warn" do
+        let(:log_level) { "warn" }
+
+        it "shows only warnings and errors" do
+          expect(events).not_to contain_log_level('INFO')
+
+          expect(events).to contain_log_level('WARN')
+          expect(events).to contain_log_level('ERROR')
+        end
+      end
+
+      context "with a log level set to :error" do
+        let(:log_level) { "error" }
+
+        it "shows only errors" do
+          expect(events).not_to contain_log_level('INFO')
+          expect(events).not_to contain_log_level('WARN')
+
+          expect(events).to contain_log_level('ERROR')
+        end
+      end
+    end
   end
 end

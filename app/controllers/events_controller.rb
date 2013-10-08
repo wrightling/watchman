@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.top(num_events, params[:after].to_i)
+    @events = Event.top(num_events, params[:after].to_i, log_level)
   end
 
   def show

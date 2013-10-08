@@ -18,6 +18,7 @@ module Watchman
 
   class Application < Rails::Application
     config.default_num_events = 12
+    config.default_log_level = "info"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -37,10 +37,14 @@ $ ->
 filter = ->
   $('.event').remove()
   $.cookie('num_events', $('#spinner-01').val(), { expires: 365 })
+  $.cookie('log_level', $('#log_level').val(), { expires: 365 })
   $.get($('#events').data('url'), after:0)
 
 $ ->
   $('input').blur(filter)
+
+$ ->
+  $('#log_level').change(filter)
 
 $ ->
   $('select').selectpicker({style: 'btn-info btn-inverse', menuStyle: 'dropdown-inverse'})
