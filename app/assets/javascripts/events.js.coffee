@@ -19,11 +19,11 @@ showSidebar = ->
   $.getJSON("/events/#{$(this).data('id')}", (data) ->
     $('aside #eventID').contents().last()[0].textContent = "#{data['event_id']}"
     $('aside #thread').contents().last()[0].textContent = "#{data['thread_name']}"
-    $('aside #level').contents().last()[0].textContent = "#{data['level']}"
+    $('aside #level').contents().last()[0].textContent = "#{data['level_string']}"
     $('aside #loggerName').contents().last()[0].textContent = "#{data['logger_name']}"
     $('aside #callerFilename').contents().last()[0].textContent = "#{data['caller_filename']}"
     $('aside #callerMethod').contents().last()[0].textContent = "#{data['caller_method']}"
-    $('aside #lineNumber').contents().last()[0].textContent = "#{data['line_number']}"
+    $('aside #lineNumber').contents().last()[0].textContent = "#{data['caller_line']}"
   )
   $('aside').removeClass('hidden')
 
