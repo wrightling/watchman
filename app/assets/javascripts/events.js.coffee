@@ -40,8 +40,12 @@ filter = ->
   $.cookie('log_level', $('#log_level').val(), { expires: 365 })
   $.get($('#events').data('url'), after:0)
 
+changeNumEvents = ->
+  if $.cookie('num_events') != $('#spinner-01').val()
+    filter()
+
 $ ->
-  $('#spinner-01').blur(filter)
+  $('#spinner-01').blur(changeNumEvents)
 
 $ ->
   $('#log_level').change(filter)
