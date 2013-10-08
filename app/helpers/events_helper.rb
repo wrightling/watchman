@@ -3,6 +3,10 @@ module EventsHelper
     @_controller.num_events
   end
 
+  def log_level
+    @_controller.log_level
+  end
+
   def to_time(time)
     if time.class == Time
       time

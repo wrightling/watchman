@@ -41,7 +41,7 @@ filter = ->
   $.get($('#events').data('url'), after:0)
 
 $ ->
-  $('input').blur(filter)
+  $('#spinner-01').blur(filter)
 
 $ ->
   $('#log_level').change(filter)

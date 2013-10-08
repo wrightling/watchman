@@ -1,6 +1,9 @@
-<input type="text" name="num_events" patter="[0-9]*" id="spinner-01" value="<%= num_events %>" class="spinner ui-spinner-input" aria-valuemin="1" aria-valuemax="9999">
-<select name="info" class="mbn" id="log_level">
-  <option value="info">INFO</option>
-  <option value="warn">WARN</option>
-  <option value="error">ERROR</option>
+<input type="text" name="num_events" pattern="[0-9]*" id="spinner-01" value="<%= num_events %>" class="spinner ui-spinner-input" aria-valuemin="1" aria-valuemax="9999">
+<%# <%= select_tag "log_level", nil, class: 'mbn' %1> %>
+<%#   <option value="info">INFO</option> %>
+<%#   <option value="warn">WARN</option> %>
+<%#   <option value="error">ERROR</option> %>
+<%# <% end %1> %>
+<select name="log_level" class="mbn" id="log_level">
+  <%= options_for_select([["INFO", "info"], ["WARN", "warn"], ["ERROR", "error"]], log_level) %>
 </select>

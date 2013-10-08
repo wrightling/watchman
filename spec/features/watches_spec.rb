@@ -36,18 +36,17 @@ feature "feature specs for: GET /" do
     end
   end
 
-  scenario "number of events shown can be modified on the fly", js: true do
+  scenario "number of events shown can be modified on the fly", js: true, focus: true do
     15.times { create(:event) }
     visit root_path
     expect(page).to have_field('num_events', with: "12")
     fill_in 'num_events', with: "20"
-    page.execute_script("$('input[name=\"num_events\"]').trigger(\"blur\")")
     expect(page).to have_field('num_events', with: "20")
     expect(page).to have_css('.event', count: 20)
     expect(page).to have_no_selector('aside')
   end
 
-  scenario "log can be filtered based on log_level", js: true, focus: true do
+  scenario "log can be filtered based on log_level", js: true do
     20.times { create(:event, level_string: "ERROR") }
     2.times { create(:event, level_string: "WARN") }
     2.times { create(:event, level_string: "INFO") }
