@@ -32,7 +32,8 @@ feature "feature specs for: GET /" do
     within('aside') do
       expect(page).to have_content(event.event_id)
       expect(page).to have_content(event.thread_name)
-      expect(page).to have_content(event.caller_filename)
+      expect(page).to have_content(event.caller_class)
+      expect(page).to have_content(event.formatted_message)
     end
   end
 

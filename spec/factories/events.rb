@@ -9,5 +9,6 @@ FactoryGirl.define do
     sequence(:caller_filename) { |n| "Caller #{n}" }
     sequence(:caller_method) { |n| "Caller Method #{n}" }
     sequence(:caller_line) { |n| n*100 }
+    sequence(:caller_class) { |n| "Caller Class #{n}" }
   end
 end

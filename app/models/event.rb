@@ -5,7 +5,7 @@ class Event < Sequel::Model(:logging_event)
     Event.order_by(:event_id)
       .select(:event_id, :log_date, :formatted_message, :level_string,
               :thread_name, :logger_name, :caller_filename, :caller_method,
-              :caller_line)
+              :caller_line, :caller_class)
       .where('event_id > ?', after_id)
       .where(level_string: levels(log_level))
       .last(num_events)
