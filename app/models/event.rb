@@ -1,5 +1,6 @@
 class Event < Sequel::Model(:logging_event)
-  no_primary_key
+  set_primary_key :event_id
+  one_to_many :logged_exceptions, key: :event_id
 
   def self.top(num_events, after_id=0, log_level='info')
     Event.order_by(:event_id)

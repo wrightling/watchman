@@ -4,8 +4,9 @@ class EventsController < ApplicationController
   end
 
   def show
+    event = Event.find(event_id: params[:event_id])
     respond_to do |format|
-      format.json { render json: Event.find(event_id: params[:event_id]) }
+      format.json { render json: EventDetails.new(event).to_json }
     end
   end
 end
