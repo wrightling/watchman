@@ -37,7 +37,19 @@ feature "feature specs for: GET /" do
     end
   end
 
-  scenario "number of events shown can be modified on the fly", js: true, focus: true do
+  scenario "exception details are shown on clicking button in sidebar", js: true do
+    event = Event.top(1).first
+    exception = create(:logged_exception, event_id: event.event_id)
+    visit root_path
+    find(".event[id='#{event.event_id}']").click
+    find('#exceptionInfo.btn-primary').click
+    expect(page).to have_css(".modal")
+    within('.modal') do
+      expect(page).to have_content(exception.trace_line)
+    end
+  end
+
+  scenario "number of events shown can be modified on the fly", js: true do
     15.times { create(:event) }
     visit root_path
     expect(page).to have_field('num_events', with: "12")

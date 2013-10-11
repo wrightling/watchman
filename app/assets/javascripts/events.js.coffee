@@ -24,6 +24,10 @@ showSidebar = ->
     $('aside #callerMethod').contents().last()[0].textContent = "#{data['caller_method']}"
     $('aside #lineNumber').contents().last()[0].textContent = "#{data['caller_line']}"
     $('aside #formattedMessage').contents().last()[0].textContent = "#{data['formatted_message']}"
+    if data['has_exception'] == 'true'
+      $('aside #exceptionInfo').removeClass('disabled').addClass('btn-primary')
+    else
+      $('aside #exceptionInfo').removeClass('btn-primary').addClass('disabled')
   )
   $('aside').removeClass('hidden')
 

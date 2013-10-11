@@ -24,5 +24,5 @@
   <div class="row-fluid mbm" id="formattedMessage">
     <span class="label label-inverse">Message</span>
   </div>
-  <a href="#fakelink" class="btn btn-large btn-block disabled">Exception Info</a>
+  <%= link_to "Exception Info", "#fakelink", id: "exceptionInfo", class: "btn btn-large btn-block disabled", data: {url: "#{root_url}exceptions/"} %>
 </aside>

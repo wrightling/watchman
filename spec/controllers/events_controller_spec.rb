@@ -32,7 +32,8 @@ describe EventsController do
     end
 
     it "returns expected json" do
-      expect(response.body).to include(@event.logger_name)
+      expect(response.body).to include(@event.logger_name,
+                                       'has_exception')
     end
   end
 end

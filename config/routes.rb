@@ -6,6 +6,7 @@ Watchman::Application.routes.draw do
   root 'watch#index'
   get  'events', to: 'events#index'
   get  'events/:event_id', to: 'events#show', constraints: { event_id: /[^\/]+/ }
+  get  'exceptions/:event_id', to: 'logged_exceptions#show', constraints: { event_id: /[^\/]+/ }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

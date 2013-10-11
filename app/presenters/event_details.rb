@@ -12,6 +12,6 @@ class EventDetails
   attr_reader :event
 
   def has_exception
-    { "hasException" => "#{event.logged_exceptions.count > 0}" }
+    { "has_exception" => "#{event.logged_exceptions.count > 0}" }
   end
 end
