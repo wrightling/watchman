@@ -5,8 +5,8 @@
   </div>
 
   <div class="modal-body">
-    <%= @exception_details.each do |detail| %>
-      <%= detail.trace_line %>
+    <% @exception_details.each do |detail| %>
+      <span><%= detail.trace_line %></span>
     <% end %>
   </div>
 
