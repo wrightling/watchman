@@ -8,3 +8,4 @@ exceptionDetails = ->
 
 $ ->
   $('body').on("click", "#exceptionInfo", exceptionDetails)
+  $('body').on("click", "#selectException", -> $('#exceptionModal .modal-body').selectText())
