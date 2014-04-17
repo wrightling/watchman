@@ -2,8 +2,6 @@ insert into logging_event_exception
 select 2, 54, "at java.lang.Thread.run(Thread.java:662) [na:1.6.0_25]"
 go
 insert into logging_event_exception
-go
-insert into logging_event_exception
 select 2, 53, "at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:447) [jbossweb.jar!/:5.1.0.GA (build: SVNTag=JBoss_5_1_0_GA date=200905221053)]"
 go
 insert into logging_event_exception
